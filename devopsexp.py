@@ -1,41 +1,23 @@
-# importing libraries
-import time
+# Program to check if a number is prime or not
+
+num = 29
+
+#num = int(input("Enter a number: "))
 
 
-# Timer starts
-starttime=time.time()
-lasttime=starttime
-lapnum=1
+flag = False
 
-print("Press ENTER to count laps.\nPress CTRL+C to stop")
+if num > 1:
+    # check for factors
+    for i in range(2, num):
+        if (num % i) == 0:
+            # if factor is found, set flag to True
+            flag = True
+            # break out of loop
+            break
 
-try:
-	while True:
-			
-		# Input for the ENTER key press
-		input()
-
-		# The current lap-time
-		laptime=round((time.time() - lasttime), 2)
-
-		# Total time elapsed
-		# since the timer started
-		totaltime=round((time.time() - starttime), 2)
-
-		# Printing the lap number,
-		# lap-time and total time
-		print("Lap No. "+str(lapnum))
-		print("Total Time: "+str(totaltime))
-		print("Lap Time: "+str(laptime))
-			
-		print("*"*20)
-
-		# Updating the previous total time
-		# and lap number
-		lasttime=time.time()
-		lapnum+=1
-
-# Stopping when CTRL+C is pressed
-except KeyboardInterrupt:
-	print("Done")
+if flag:
+    print(num, "is not a prime number")
+else:
+    print(num, "is a prime number")
 
