@@ -7,6 +7,8 @@ num = 29
 
 flag = False
 
+
+
 if num > 1:
     # check for factors
     for i in range(2, num):
@@ -21,4 +23,5 @@ if flag:
 else:
     print(num, "is a prime number")
 print("vinod was here")
+print("Aman was here")
 
